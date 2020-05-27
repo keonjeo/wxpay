@@ -29,14 +29,14 @@ wxpay 提供了以下的方法：
 ## 安装
 
 ```bash
-$ go get github.com/objcoding/wxpay
+$ go get github.com/keonjeo/wxpay
 
 ```
 
 ## go modules
 ```cgo
 // go.mod
-require github.com/objcoding/wxpay v1.0.5
+require github.com/keonjeo/wxpay v1.0.5
 
 ```
 

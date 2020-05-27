@@ -8,6 +8,7 @@ import (
 	"crypto/tls"
 	"encoding/hex"
 	"errors"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"sort"
@@ -198,10 +199,20 @@ func (c *Client) UnifiedOrder(params Params) (Params, error) {
 	} else {
 		url = UnifiedOrderUrl
 	}
+	
+	fmt.Println("===========================================")
+	fmt.Printf("UnifiedOrder => params: %v\n", params)
+	fmt.Println("===========================================")
+
 	xmlStr, err := c.postWithoutCert(url, params)
 	if err != nil {
 		return nil, err
 	}
+
+	fmt.Println("===========================================")
+	fmt.Printf("UnifiedOrder:postWithoutCert => xmlStr: %v\n", xmlStr)
+	fmt.Println("===========================================")
+
 	return c.processResponseXml(xmlStr)
 }
 
